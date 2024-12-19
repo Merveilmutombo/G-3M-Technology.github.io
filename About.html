@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G&3M Technologie</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+    list-style: none;
+    text-decoration: none;
+  }
+  :root {
+    --main-color: #000000af;
+    --text-color: #ffffff;
+    --bg-color: #000000;
+
+    --big-font: 3rem;
+    --h2-font: 2.24rem;
+    --p-font: 0.9rem;
+  }
+  header img{
+    width: 70px;
+  }
+  section {
+    padding: 50px 10%;
+  }
+  body.active {
+    --bg-color: #1e1c2a;
+    --text-color: #fff;
+  }
+  body {
+    color: var(--text-color);
+    background: var(--bg-color);
+  }
+  header {
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background:url(img/4.jpg);
+    padding: 25px 120px;
+    border-bottom: solid rgb(172, 126, 0);
+  }
+  .Navbar {
+    display: flex;
+  }
+  .Navbar a {
+    font-size: 1rem;
+    padding: 10px 20px;
+    color: var(--text-color);
+    font-weight: 500;
+    
+  }
+  .Navbar a:hover {
+    color: rgb(172, 126, 0);
+  }
+ .Home {
+    padding-top: 10%;
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .Home-img img {
+    width: 100%;
+  }
+  .Home-text h1 {
+    font-size: var(--big-font);
+    color: rgb(172, 126, 0);
+  }
+  .Home-text h2 {
+    font-size: var(--h2-font);
+    margin: 1rem 0 1rem;
+  }
+  @media (max-width: 921px) {
+    header {
+      padding: 14px 41px;
+    }
+    :root {
+      --big-font: 3rem;
+      --h2-font: 1.7rem;
+    }
+  }
+  @media (max-width: 768px) {
+    section {
+      padding: 50px 8%;
+    }
+    #menu-icon {
+      display: initial;
+      color: var(--text-color);
+    }
+    header .navbar {
+      position: absolute;
+      top: -400px;
+      left: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      background: var(--bg-color);
+      box-shadow: 0 4px 4px rgb(0 0 0 / 10%);
+      transition: 0.2s ease;
+    }
+    .Navbar.active {
+      top: 100%;
+    }
+    .Navbar a {
+      padding: 1.5rem;
+      display: block;
+      background: var(--bg-color);
+    }
+    
+  }
+  @media (max-width: 715px) {
+    header {
+      padding: 10px 16px;
+    }
+    .home {
+      grid-template-columns: 1fr;
+    }
+    .about {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    .about-img {
+      order: 2;
+    }
+  }
+  @media (max-width: 515px) {
+    .connect {
+      flex-direction: column;
+    }
+    .connect .btn {
+      margin-top: 1rem;
+    }
+  }
+  @media (max-width: 450px) {}
+    :root {
+      --big-font: 2rem;
+      --h2-font: 1.4rem;
+    }
+    .home-text {
+      padding-top: 4rem;
+    }
+  menu{
+    padding-left: 120px;
+  }
+  menu P{
+    padding-bottom: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  menu h1{
+    color: rgb(172, 126, 0);
+    padding-left: 150px;
+  }
+  .menu-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .box {
+    position: relative;
+    margin-top: 2rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(221, 170, 1, 0.966);
+    padding: 10px;
+  }
+  .box-img {
+    width: 200px;
+    height: 200px;
+  }
+  .box-img img {
+    width: 120%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+  .box h2 {
+    font-size: 1.2rem;
+    color: #af7303;
+  }
+  .box h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 4px 0 10px;
+  }
+  .box span {
+    font-size: var(--p-font);
+    font-weight: 500;
+  }
+  .box .bx {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 20px;
+    background: var(--main-color);
+    border-radius: 0 0.5rem 0 0.5rem;
+    padding: 5px 8px;
+  }
+  .box .bx:hover {
+    background: #ffa400;
+  }
+  .servives-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, auto));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .s-box {
+    text-align: center;
+  }
+  .s-box img {
+    width: 60px;
+  }
+  .s-box h3 {
+    margin: 4px 0 10px;
+    color: #af7303;
+  }
+  main{
+    background-image: url(img/4.jpg);
+  }.Contactez-nous {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    gap: 1.5rem;
+    background-image: url(img/4.jpg);
+    color: #af7303;
+  }
+  .Contactez-nous-box h3 {
+    margin-bottom: 1rem;
+    
+  }
+  .social {
+    display: flex;
+    margin-top: 1.5rem;
+  }
+  .social i {
+    font-size: 20px;
+    margin-right: 1rem;
+    color: var(--text-color);
+  }
+  .social i:hover {
+    color: var(--main-color);
+  }
+  .contact-box li a {
+    color: var(--text-color);
+  }
+  .contact-box li a:hover {
+    color: var(--main-color);
+  }
+  .address {
+    display: flex;
+    flex-direction: column;
+  }
+  .address i {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+  .address span {
+    margin-left: 1rem;
+  }
+  .copyright {
+    padding: 20px;
+    text-align: center;
+  }
+  .address {
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+  }
+  .address h3{
+    display: flex;
+    flex-direction: column;
+    color: #af7303;
+  }
+</style>
+    <!-- Navbar-->
+    <header>
+        <a href="#"><img src="img/gm logo.png" alt="logos"></a>
+    <ul class="Navbar"><br>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="Services.html">Services</a></li>
+            <li><a href="#">A-propos</a></li>
+            <li><a href="#Contactez-nous">Contactez-nous</a></li>
+    </ul>   
+ </header>
+
+ <body>
+    <!-- Home -->
+        <section class="Home" id="Home">
+            <div class="Home-text">
+                <span>Nous sommes</span>
+                <h1>Global Multidimensionnal<br>Management Media</h1>
+                <p>est une entreprise innovante qui propose une gamme complète de services en marketing digital, création de logiciels, web développement et technologies écologiques.
+                  Marketing digital:  </p>
+            </div>
+            <div class="Home-img">
+                <img src="img/1.JPG" alt="img">
+       </div> 
+    </section>
+        <menu><h1>Secteur d'action</h1>
+          &emsp;&emsp;&emsp;G&3M TECH aide les entreprises à accroître leur visibilité en ligne et à générer des leads qualifiés grâce à des stratégies de marketing digital sur mesure;
+                  <p><br>Création de logiciels: G&3M TECH développe des logiciels personnalisés répondant aux besoins spécifiques de ses clients, afin d'optimiser leurs processus et d'améliorer leur productivité.
+                 </p><p> Web développement: G&3M TECH conçoit et réalise des sites web et des applications web performants et ergonomiques, reflétant l'identité de marque de ses clients.
+                  </p><p>Technologies écologiques: G&3M TECH s'engage dans le développement de solutions technologiques durables et respectueuses de l'environnement, pour un avenir plus vert.
+        <div class="menu-container">
+                      <!-- Box 1 -->
+                      <div class="box">
+                          <div class="box-img">
+                              <img src="img/3.jpg" alt="">
+                          </div>
+                          <h2></h2>
+                          <span></span>
+                          <i class='bx bx-cart-alt'></i>
+                      </div>
+                      <!-- Box 2 -->
+                      <div class="box">
+                          <div class="box-img">
+                              <img src="img/7.jpg" alt="">
+                          </div>
+                          <h2> </h2>
+                          <span></span>
+                          <i class='bx bx-cart-alt'></i>
+                      </div>
+                      <!-- Box 3 -->
+                      <div class="box">
+                          <div class="box-img">
+                              <img src="img/0.jpg" alt="">
+                          </div>
+                          <h2></h2>
+                          <span></span>
+                          <i class='bx bx-cart-alt'></i>
+                      </div>
+        </div>
+              </p> &emsp;&emsp;&emsp;En  résumé, G&3M TECH est un partenaire idéal pour les entreprises qui recherchent une expertise complète dans le domaine des technologies numériques, tout en s'inscrivant dans une démarche éco-responsable.
+                  <p><br><b>&emsp;&emsp;&emsp;Voici quelques points forts de G&3M TECH :</p></b>
+                   <li>&emsp;&emsp;Une équipe d'experts passionnés et expérimentés</li>
+                   <li>&emsp;&emsp;Une approche innovante et créative</li>
+                   <li>&emsp;&emsp; Des solutions personnalisées et adaptées aux besoins de chaque client</li>
+                   <li>&emsp;&emsp;Un engagement fort pour le développement durable</li> </ul> 
+<br><br><br>
+        <h1>Objectif</h1>  
+        <P>&emsp;&emsp;</P>      
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;G&3M TECH poursuit des objectifs:
+        <br>&emsp;&emsp;-	Accroitre la notoriété de la marque
+        <br>&emsp;&emsp;-	Fidéliser les clients
+        <br>&emsp;&emsp;-	Augmenter les parts de marché
+        <br>&emsp;&emsp;-	Etre parmi les grands leaders du marché dans le domaine de créations technologiques
+        <br>&emsp;&emsp;-	Innover constamment
+        <br>&emsp;&emsp;-	Expansion géographique de la boite et de nos services
+        <br>&emsp;&emsp;-	Fidéliser la clientèle
+        <br>&emsp;&emsp;-	Etre parmi les leaders reconnus dans les solutions technologiques écologiques
+        <br>&emsp;&emsp;-	Contribuer de manière significative à la réduction de l’empreinte carbone
+        <br>&emsp;&emsp;-	Assurer la viabilité de l’entreprise
+         <main> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</main>   
+          <H1>Personnels</H1>
+          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;G&3M TECH est une entreprise innovante qui propose une gamme complète de services en marketing digital, <p>création de logiciels, web développement et technologies écologiques.
+ </p> Ainsi elle est constituée une grande équipe composéé d'(de):
+ <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-	CEO </p>
+ <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-	CTO </p>
+ <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-	Lead développeur</p>
+ 
+ <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-Lead designer</p>
+ <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-Responsable marketing</p>
+ <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-	Responsable commercial</p>
+ <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-Lead finance</p>
+ <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-	Lead DRH </p>
+ <p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-	Lead écologique</p>
+ 
+</menu> 
+  <!-- Contact -->
+  <section class="Contactez-nous" id="Contactez-nous">
+    <div class="contact-box">
+        <h3>G&3M Technologie</h3>
+        <span>Contactez-nous</span>
+        <div class="social">
+            <a href="#"><i class='bx bxl-facebook' ></i></a>
+            <a href="#"><i class='bx bxl-twitter' ></i></a>
+            <a href="#"><i class='bx bxl-instagram' ></i></a>
+        </div>
+    </div>
+    <div class="contact-box">
+        <h3>Menu Links</h3>
+        <li><a href="#home">Home</a></li>
+        <li><a href="About.html">A-propos</a></li>
+        <li><a href="Services.html">Services</a></li>
+        <li><a href="#Contactez-nous">Contactez-nous</a></li>
+    </div>
+    <div class="contact-box">
+        <h3>Quick Links</h3>
+        <li><a href="#Privacy Policy">Privacy Policy</a></li>
+        <li><a href="#Disclaimer">Disclaimer</a></li>
+        <li><a href="#Terms Of Use">Terms Of Use</a></li>
+    </div>
+    <div class="contact-box address">
+        <h3>Contact</h3>
+        <i class='bx bxs-map' ><span>005, Av , Goma, RDC</span></i>
+        <i class='bx bxs-phone' ><span>+243 904 936 771- +243 902 571 369</span></i>
+        <i class='bx bxs-envelope' ><span>g3mtechnology@gmail.com</span></i>
+    </div>
+</section>
+
+<!-- Copyright -->
+<div class="copyright">
+    <p>© G&3M Technology.</p>
+</div>
+
+</footer>
+</body>
